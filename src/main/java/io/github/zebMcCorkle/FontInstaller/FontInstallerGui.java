@@ -90,13 +90,16 @@ public class FontInstallerGui {
             }
         });
 
-        File jarFile = new File(FontInstallerGui.class.getProtectionDomain().getCodeSource().getLocation().getPath());
         File startupFile = new File(System.getenv("appdata") + "\\..\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FontInstaller.jar");
 
-        try {
-            Files.copy(jarFile.toPath(), startupFile.toPath());
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!startupFile.exists()) {
+            File jarFile = new File(FontInstallerGui.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+
+            try {
+                Files.copy(jarFile.toPath(), startupFile.toPath());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         update();
