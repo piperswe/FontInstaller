@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public class AutoUpdate implements Runnable {
     private static final boolean ENABLED = true;
-    public static final String VERSION = "v1.0.2";
+    public static final String VERSION = "v1.1";
 
     public boolean uptodate;
     public String updateUrl;
