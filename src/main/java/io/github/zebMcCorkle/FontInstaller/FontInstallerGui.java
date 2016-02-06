@@ -69,6 +69,17 @@ public class FontInstallerGui {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
+                } catch (InstantiationException e1) {
+                    e1.printStackTrace();
+                } catch (IllegalAccessException e1) {
+                    e1.printStackTrace();
+                } catch (UnsupportedLookAndFeelException e1) {
+                    e1.printStackTrace();
+                }
                 JFileChooser fileChooser = new JFileChooser();
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Font Files", "ttf", "otf");
                 fileChooser.setFileFilter(filter);
@@ -89,6 +100,17 @@ public class FontInstallerGui {
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
+                }
+                try {
+                    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+                } catch (ClassNotFoundException e1) {
+                    e1.printStackTrace();
+                } catch (InstantiationException e1) {
+                    e1.printStackTrace();
+                } catch (IllegalAccessException e1) {
+                    e1.printStackTrace();
+                } catch (UnsupportedLookAndFeelException e1) {
+                    e1.printStackTrace();
                 }
                 update();
             }
