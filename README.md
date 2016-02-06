@@ -2,7 +2,7 @@
 ## Install fonts on Windows without Administrator permission
 
 This program came along when I was doing a project for my high school graphic design class and wanted to use a font that
-isn't installed by default with Windows or Adobe Creative Suite. I found @tsukasa's [RegisterFont](/tsukasa/RegisterFont)
+isn't installed by default with Windows or Adobe Creative Suite. I found [@tsukasa](https://github.com/tsukasa)'s [RegisterFont](https://github.com/tsukasa/RegisterFont)
 and loved it for a few months. My graphic design teacher was wanting to find a way for students to install fonts (so our
 designs aren't so boring with default fonts), so I whipped this easy GUI up. It allows you to simply add fonts to the list,
 restart your program, and the font will be available. It adds itself to the Startup folder, so you don't have to worry
