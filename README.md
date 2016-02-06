@@ -9,5 +9,5 @@ restart your program, and the font will be available. It adds itself to the Star
 about fonts deregistering when you log out, and it also has an auto-update function* that always keeps you up to date with
 the latest bug fixes and features.
 
-*Coming in version 1.1, you must compile the code to get it currently. Also, it's useless until 1.1.1 comes out, as when
+\* Coming in version 1.1, you must compile the code to get it currently. Also, it's useless until 1.1.1 comes out, as when
 you compile the current code it will constantly bug you to "update" to v1.0.1. At least it will tell you when 1.1 is released.
