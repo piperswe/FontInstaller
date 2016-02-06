@@ -10,7 +10,7 @@ buildscript {
 }
 
 group 'io.github.zebMcCorkle'
-version '1.0.2'
+version '1.1'
 
 task wrapper(type: Wrapper) {
   gradleVersion = '2.10'
