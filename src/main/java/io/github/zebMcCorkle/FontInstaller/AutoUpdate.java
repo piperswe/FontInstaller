@@ -3,7 +3,6 @@ package io.github.zebMcCorkle.FontInstaller;
 import com.google.gson.Gson;
 import io.github.zebMcCorkle.FontInstaller.github.Release;
 
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

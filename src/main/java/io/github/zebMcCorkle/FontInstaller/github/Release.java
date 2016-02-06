@@ -1,7 +1,9 @@
 package io.github.zebMcCorkle.FontInstaller.github;
 
-/**
- * Created by Zebulon McCorkle on 2/6/2016.
+/*
+ * Copyright (c) 2016 Zeb McCorkle
+ *
+ * All Rights Reserved
  */
 public class Release {
     public String url;

@@ -1,9 +1,4 @@
 package io.github.zebMcCorkle.FontInstaller;
-/*
- * Copyright (c) 2016 Zeb McCorkle
- * 
- * All Rights Reserved
- */
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -18,6 +13,11 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/*
+ * Copyright (c) 2016 Zeb McCorkle
+ *
+ * All Rights Reserved
+ */
 public class FontInstallerGui {
     private JList fontList;
     private JButton addFontButton;
