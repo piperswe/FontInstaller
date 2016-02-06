@@ -1,4 +1,5 @@
-package io.github.zebMcCorkle.FontInstaller;/*
+package io.github.zebMcCorkle.FontInstaller;
+/*
  * Copyright (c) 2016 Zeb McCorkle
  * 
  * All Rights Reserved
@@ -12,6 +13,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -32,7 +35,7 @@ public class FontInstallerGui {
         }
     }
 
-    public FontInstallerGui() throws IOException {
+    public FontInstallerGui() throws IOException, URISyntaxException {
         InputStream rfexein = getClass().getResource("/RegisterFont.exe").openStream();
         File rfexe = new File("RegisterFont.exe");
         FileOutputStream rfexeout = new FileOutputStream(rfexe);
@@ -44,6 +47,16 @@ public class FontInstallerGui {
         rfexeout.flush();
 
         rfexe.deleteOnExit();
+
+        AutoUpdate au = new AutoUpdate();
+        au.run();
+        if (!au.uptodate) {
+            int response = JOptionPane.showConfirmDialog(panel, "There is an update available, would you like to download it?", "Update Available!", JOptionPane.YES_NO_OPTION);
+            if (response == 0) {
+                Desktop.getDesktop().browse(new URI(au.updateUrl));
+                System.exit(1);
+            }
+        }
 
         installer = new FontInstaller();
 
@@ -90,22 +103,24 @@ public class FontInstallerGui {
             }
         });
 
-        File startupFile = new File(System.getenv("appdata") + "\\..\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FontInstaller.jar");
+        File startupFile = new File(System.getenv("appdata") + "\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\FontInstaller.jar");
 
-        if (!startupFile.exists()) {
-            File jarFile = new File(FontInstallerGui.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        if (startupFile.exists()) {
+            Files.delete(startupFile.toPath());
+        }
 
-            try {
-                Files.copy(jarFile.toPath(), startupFile.toPath());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        File jarFile = new File(FontInstallerGui.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+
+        try {
+            Files.copy(jarFile.toPath(), startupFile.toPath());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         update();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, URISyntaxException {
         JFrame frame = new JFrame("Font Installer");
         frame.setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
         frame.setContentPane(new FontInstallerGui().panel);
