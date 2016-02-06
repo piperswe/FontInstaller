@@ -36,6 +36,11 @@ public class FontInstallerGui {
     }
 
     public FontInstallerGui() throws IOException, URISyntaxException {
+        if (!System.getProperty("os.name").toLowerCase().contains("win")) {
+            JOptionPane.showMessageDialog(panel, "This only works on Windows.");
+            System.exit(2);
+        }
+
         InputStream rfexein = getClass().getResource("/RegisterFont.exe").openStream();
         File rfexe = new File("RegisterFont.exe");
         FileOutputStream rfexeout = new FileOutputStream(rfexe);
