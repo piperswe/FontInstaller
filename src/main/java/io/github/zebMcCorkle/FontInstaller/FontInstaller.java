@@ -1,8 +1,4 @@
-package io.github.zebMcCorkle.FontInstaller;/*
- * Copyright (c) 2016 Zeb McCorkle
- * 
- * All Rights Reserved
- */
+package io.github.zebMcCorkle.FontInstaller;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
@@ -13,6 +9,11 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * Copyright (c) 2016 Zeb McCorkle
+ *
+ * All Rights Reserved
+ */
 public class FontInstaller {
     public File directory = new File(System.getenv("appdata") + "\\fontinstaller");
     public File fontsFile = new File(directory.getAbsolutePath() + "\\fonts.txt");
