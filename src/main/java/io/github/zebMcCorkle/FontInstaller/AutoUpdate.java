@@ -19,10 +19,11 @@ import java.util.Map;
  */
 public class AutoUpdate implements Runnable {
     private static final boolean ENABLED = true;
-    private static final String VERSION = "v1.0.2";
+    public static final String VERSION = "v1.0.2";
 
     public boolean uptodate;
     public String updateUrl;
+    public String newVersion;
 
     @Override
     public void run() {
@@ -46,6 +47,7 @@ public class AutoUpdate implements Runnable {
         } else {
             uptodate = false;
             updateUrl = release.assets[0].browser_download_url;
+            newVersion = release.tag_name;
             System.out.println("outdated, you have " + VERSION + " but latest is " + release.tag_name);
         }
     }
