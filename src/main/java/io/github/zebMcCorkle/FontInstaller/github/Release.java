@@ -1,5 +1,7 @@
 package io.github.zebMcCorkle.FontInstaller.github;
 
+import com.google.gson.Gson;
+
 /*
  * Copyright (c) 2016 Zeb McCorkle
  *
@@ -145,21 +147,26 @@ public class Release {
         this.assets = assets;
     }
 
-    public String assets_url;
-    public String upload_url;
-    public String tarball_url;
-    public String zipball_url;
-    public int id;
-    public String tag_name;
-    public String target_commitish;
-    public String name;
-    public String body;
-    public boolean draft;
-    public boolean prerelease;
-    public String created_at;
-    public String published_at;
-    public User author;
-    public Asset[] assets;
+    private String assets_url;
+    private String upload_url;
+    private String tarball_url;
+    private String zipball_url;
+    private int id;
+    private String tag_name;
+    private String target_commitish;
+    private String name;
+    private String body;
+    private boolean draft;
+    private boolean prerelease;
+    private String created_at;
+    private String published_at;
+    private User author;
+    private Asset[] assets;
+
+    public String toString() {
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
 
     public static class User {
         public String getLogin() {
@@ -402,36 +409,41 @@ public class Release {
             this.updated_at = updated_at;
         }
 
-        public String login;
-        public int id;
-        public String avatar_url;
-        public String gravatar_id;
-        public String url;
-        public String html_url;
-        public String followers_url;
-        public String following_url;
-        public String gists_url;
-        public String starred_url;
-        public String subscriptions_url;
-        public String organizations_url;
-        public String repos_url;
-        public String events_url;
-        public String received_events_url;
-        public String type;
-        public boolean site_admin;
-        public String name;
-        public String company;
-        public String blog;
-        public String location;
-        public String email;
-        public boolean hireable;
-        public String bio;
-        public int public_repos;
-        public int public_gists;
-        public int followers;
-        public int following;
-        public String created_at;
-        public String updated_at;
+        private String login;
+        private int id;
+        private String avatar_url;
+        private String gravatar_id;
+        private String url;
+        private String html_url;
+        private String followers_url;
+        private String following_url;
+        private String gists_url;
+        private String starred_url;
+        private String subscriptions_url;
+        private String organizations_url;
+        private String repos_url;
+        private String events_url;
+        private String received_events_url;
+        private String type;
+        private boolean site_admin;
+        private String name;
+        private String company;
+        private String blog;
+        private String location;
+        private String email;
+        private boolean hireable;
+        private String bio;
+        private int public_repos;
+        private int public_gists;
+        private int followers;
+        private int following;
+        private String created_at;
+        private String updated_at;
+
+        public String toString() {
+            Gson gson = new Gson();
+            return gson.toJson(this);
+        }
     }
 
     public static class Asset {
@@ -531,18 +543,23 @@ public class Release {
             this.uploader = uploader;
         }
 
-        public String url;
-        public String browser_download_url;
-        public int id;
-        public String name;
-        public String label;
-        public String state;
-        public String content_type;
-        public int size;
-        public int download_count;
-        public String created_at;
-        public String updated_at;
-        public User uploader;
+        private String url;
+        private String browser_download_url;
+        private int id;
+        private String name;
+        private String label;
+        private String state;
+        private String content_type;
+        private int size;
+        private int download_count;
+        private String created_at;
+        private String updated_at;
+        private User uploader;
+
+        public String toString() {
+            Gson gson = new Gson();
+            return gson.toJson(this);
+        }
     }
 
 }
