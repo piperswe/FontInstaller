@@ -51,7 +51,7 @@ public class FontInstallerGui {
         AutoUpdate au = new AutoUpdate();
         au.run();
         if (!au.uptodate) {
-            int response = JOptionPane.showConfirmDialog(panel, "There is an update available, would you like to download it?", "Update Available!", JOptionPane.YES_NO_OPTION);
+            int response = JOptionPane.showConfirmDialog(panel, "There is an update available, would you like to download it?\nYou are currently on " + au.VERSION + ", latest is " + au.newVersion, "Update Available!", JOptionPane.YES_NO_OPTION);
             if (response == 0) {
                 Desktop.getDesktop().browse(new URI(au.updateUrl));
                 System.exit(1);
