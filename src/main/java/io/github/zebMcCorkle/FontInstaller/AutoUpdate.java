@@ -41,7 +41,7 @@ public class AutoUpdate implements Runnable {
         }
         Gson gson = new Gson();
         Release release = gson.fromJson(res, Release.class);
-        if (release.tag_name == VERSION) {
+        if (release.tag_name.equals(VERSION)) {
             uptodate = true;
             System.out.println(VERSION + " up to date");
         } else {
