@@ -1,4 +1,4 @@
-version: '{build}'
+version: '1.2'
 os: Windows Server 2012
 install:
   - cmd: SET PATH=%JAVA_HOME%\bin;%PATH%
