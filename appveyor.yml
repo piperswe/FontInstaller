@@ -14,7 +14,7 @@ deploy:
   description: ''
   provider: GitHub
   auth_token:
-    secure: <your encrypted token>
+    secure: gwe4jrWr7iJbmKpHSfsmEwr08n8g5vtNTERPHpo/jamY1HbmwAqpZPlVpxpWGe9g
   artifact: /build/libs/FontInstaller*\.jar/
   draft: true
   prerelease: false
