@@ -9,3 +9,15 @@ test_script:
   - gradlew test
 cache:
   - C:\Users\appveyor\.m2
+deploy:
+  release: v$(appveyor_build_version)
+  description: ''
+  provider: GitHub
+  auth_token:
+    secure: <your encrypted token>
+  artifact: /build/libs/FontInstaller*\.jar/
+  draft: true
+  prerelease: false
+  on:
+    branch: master
+    appveyor_repo_tag: true
